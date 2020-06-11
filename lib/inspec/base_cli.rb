@@ -157,6 +157,12 @@ module Inspec
         desc: "Exit with code 101 if any tests fail, and 100 if any are skipped (default).  If disabled, exit 0 on skips and 1 for failures."
     end
 
+    def self.check_options
+      profile_options
+      option :inspecstyle, type: :boolean,
+        desc: "Scan profile code for InSpecStyle compliance."
+    end
+
     def self.format_platform_info(params: {}, indent: 0, color: 39)
       str = ""
       params.each do |item, info|
